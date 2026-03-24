@@ -1,4 +1,4 @@
 {
-  "start_date": "2026-03-24",
+  "start_date": "REPLACE_WITH_YOUR_START_DATE",
   "note": "Replace start_date with today's date in YYYY-MM-DD format when you first push this repo, e.g. 2026-03-24. The daily reminder will calculate your study day from this date automatically."
 }

@@ -43,11 +43,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
   box-shadow:2px 0 12px rgba(0,0,0,0.04);
 }
 .sidebar-brand{padding:0 20px 24px;border-bottom:1px solid var(--border);margin-bottom:16px;}
-.sidebar-badge{
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;
-  text-transform:uppercase;color:var(--amber);background:var(--amber-bg);
-  border:1px solid var(--amber-bdr);padding:3px 8px;display:inline-block;margin-bottom:10px;
-}
 .sidebar-brand h2{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--text);line-height:1.35;}
 .nav-group{padding:0 12px;margin-bottom:6px;}
 .nav-group-label{
@@ -253,7 +248,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 <!-- ══════════════ SIDEBAR ══════════════ -->
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <span class="sidebar-badge">94% · Advanced</span>
     <h2>Financial Mastery Roadmap</h2>
   </div>
 
@@ -284,8 +278,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
   </div>
 
   <div class="nav-group">
-    <div class="nav-group-label">Setup</div>
-    <a href="#deploy" class="nav-link" data-s="deploy"><span class="nav-dot"></span>GitHub Deployment</a>
+    <div class="nav-group-label">Progress</div>
     <a href="#checklist" class="nav-link" data-s="checklist"><span class="nav-dot"></span>Progress Checklist</a>
   </div>
 
@@ -301,17 +294,14 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 <!-- ── HERO ── -->
 <section class="hero" id="overview">
-  <div class="hero-eyebrow">Advanced Track · Personalised</div>
-  <h1>Close the Gap.<br>Build the <em>Edge.</em></h1>
-  <p>You scored 94% — solidly advanced. Your one miss was on <strong>beta calculation and CAPM mechanics</strong>, which is a foundational pricing concept, not a math problem. This roadmap corrects that first, then builds a systematic investment framework that leverages your MIP, machine learning, and statistics background without requiring stochastic calculus or measure theory. Every resource listed is free and accessible online.</p>
+  <div class="hero-eyebrow">Advanced Track · 28-Week Curriculum</div>
+  <h1>Systematic.<br>Quantitative.<br><em>Invested.</em></h1>
+  <p>A structured learning roadmap for advancing financial knowledge as a dual-market investor in BIST and S&amp;P 500. Built around an analytical, data-driven approach — every concept is tied to a hands-on Python deliverable using real BIST and macroeconomic data. Every resource listed is free and accessible online, no paywalls or hard-copy textbooks required.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="val">94%</span><span class="lbl">Assessment Score</span></div>
-    <div class="hero-stat"><span class="val">β</span><span class="lbl">The One Gap</span></div>
     <div class="hero-stat"><span class="val">28</span><span class="lbl">Weeks Total</span></div>
     <div class="hero-stat"><span class="val">9</span><span class="lbl">Core Modules</span></div>
-  </div>
-  <div class="alert-banner">
-    <strong>What the beta question reveals:</strong> Beta is the slope coefficient of a linear regression of a stock's returns on the market's returns. You already know OLS regression deeply from your statistics background. The gap is the financial interpretation layer — what beta means for pricing, how it behaves in BIST's thin-trading environment, and why Damodaran's bottom-up beta is more reliable than a regression beta for emerging market stocks.
+    <div class="hero-stat"><span class="val">3</span><span class="lbl">Phases</span></div>
+    <div class="hero-stat"><span class="val">100%</span><span class="lbl">Free Resources</span></div>
   </div>
 </section>
 
@@ -1046,68 +1036,11 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 </section>
 
 <!-- ════════════════════════════════════
-     GITHUB DEPLOYMENT
-════════════════════════════════════ -->
-<section class="deploy-section" id="deploy">
-  <h2>🚀 GitHub Deployment Guide</h2>
-  <p>Deploy this roadmap as a GitHub Pages site at <code>AhmetY21.github.io/finance-roadmap</code>, with a GitHub Actions workflow that automatically opens a GitHub Issue each morning as your daily study reminder — with today's module, tasks, and a link back to the site.</p>
-
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">Create the repository</div>
-        <div class="step-desc">Go to <a href="https://github.com/new" target="_blank">github.com/new</a>. Name it <code>finance-roadmap</code>. Set to <strong>Public</strong> (required for free GitHub Pages). Do NOT initialise with README — you'll push the files directly.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">Upload files from the zip</div>
-        <div class="step-desc">Download <code>finance-roadmap-deploy.zip</code> from this session. Unzip it. Then:<br>
-        <code>cd finance-roadmap</code><br>
-        <code>git init && git add . && git commit -m "Initial deploy"</code><br>
-        <code>git remote add origin https://github.com/AhmetY21/finance-roadmap.git</code><br>
-        <code>git push -u origin main</code></div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">Enable GitHub Pages</div>
-        <div class="step-desc">Go to repository → <strong>Settings → Pages</strong>. Under "Source", select <strong>Deploy from a branch</strong>, branch: <code>main</code>, folder: <code>/ (root)</code>. Click Save. Your site will be live at <code>https://AhmetY21.github.io/finance-roadmap</code> within 2–3 minutes.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <div class="step-title">Enable daily Issues reminder (GitHub Actions)</div>
-        <div class="step-desc">The file <code>.github/workflows/daily-reminder.yml</code> is already included in the zip. It runs every morning at <strong>07:00 UTC (10:00 Ankara time)</strong> and opens a GitHub Issue titled "📚 Today's Finance Study Session — [date]" with your current module tasks. No secrets needed — it uses <code>GITHUB_TOKEN</code> which is automatically available. The Issues tab becomes your study log.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <div class="step-title">Enable Issues on the repository</div>
-        <div class="step-desc">Go to Settings → Features → tick ✅ <strong>Issues</strong>. This is where your daily reminders will appear. You can close each Issue when you complete the day's session — this creates a visible study log you can review weekly.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">6</div>
-      <div class="step-body">
-        <div class="step-title">(Optional) Get email notifications</div>
-        <div class="step-desc">GitHub automatically emails you when an Issue is opened in your own repo. Go to <strong>github.com/settings/notifications</strong> → ensure "Participating and @mentions" and "Issues" are ticked under Email. Every morning you'll receive an email with that day's study tasks — zero extra setup required.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════
      CHECKLIST
 ════════════════════════════════════ -->
 <section class="final-section" id="checklist">
   <h2>Progress Checklist</h2>
-  <p style="font-size:13.5px;color:var(--text-dim);margin-bottom:18px">Click to mark complete. Saved locally in your browser. Your daily GitHub Issues will reference these milestones.</p>
+  <p style="font-size:13.5px;color:var(--text-dim);margin-bottom:18px">Click to mark complete. Progress is saved locally in your browser.</p>
 
   <div id="chk-items">
     <div class="check-item" onclick="toggleCheck(this)" data-id="c1"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 1–2:</strong> Calculate regression beta for 3 BIST stocks + build bottom-up WACC for EREGL or THYAO</span></div>
@@ -1126,13 +1059,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
     <div class="check-item" onclick="toggleCheck(this)" data-id="c14"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Investment journal — write thesis before every trade, review quarterly</span></div>
   </div>
 
-  <div style="margin-top:36px;padding:16px;background:var(--bg2);border:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);line-height:1.9;">
-    PROFILE · BSc Industrial Engineering · MSc Operations Research · 4 Yrs Banking (TR) · BIST + S&amp;P 500 Investor<br>
-    SCORE · 94% (17/18) · Gap Identified: Beta / CAPM Calculation &amp; Bottom-Up Beta for EM Stocks<br>
-    SKILLS · MIP · Machine Learning · Data Science · Statistics — All Applied Throughout This Roadmap<br>
-    RESOURCES · 100% Free &amp; Online · No Paywalls · No Hard-Copy Required<br>
-    TIMELINE · 28 Weeks at 5–7 hrs/week · Capstone: Personal Quantitative Investment Framework
-  </div>
+
 </section>
 
 </main>
@@ -1150,7 +1077,7 @@ function toggleMod(id) {
 
 // ── NAV SCROLL SPY ──
 const navLinks = document.querySelectorAll('.nav-link[data-s]');
-const anchors = ['overview','m1','m2','m3','m4','m5','m6','m7','m8','m9','deploy','checklist'];
+const anchors = ['overview','m1','m2','m3','m4','m5','m6','m7','m8','m9','checklist'];
 window.addEventListener('scroll', () => {
   let cur = anchors[0];
   anchors.forEach(id => {

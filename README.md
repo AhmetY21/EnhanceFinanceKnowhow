@@ -1,6 +1,6 @@
 # 📈 Financial Mastery Roadmap
 
-> **Personal financial knowledge roadmap** — 28-week curriculum for advancing expert-level financial analysis
+> **Personal financial knowledge roadmap** — 28-week curriculum for advancing from assessment score of 94% to expert-level financial analysis, built for an investor with MIP/ML/statistics background investing in both BIST and S&P 500 from Turkey.
 
 ## 🌐 Live Site
 
@@ -99,7 +99,15 @@ All free, all online:
 - **borsapy Python library** — github.com/saidsurucu/borsapy
 - **Quantopian Lecture Archive** — github.com/quantrocket-codeload/quant-finance-lectures
 
+---
 
+## 📊 Profile
+
+- **Background:** BSc Industrial Engineering · MSc Operations Research
+- **Experience:** 4 Years Banking (Turkey)
+- **Current Investments:** BIST + S&P 500
+- **Assessment Score:** 94% · Gap: Beta / CAPM Mechanics
+- **Tools:** MIP · Machine Learning · Data Science · Statistics
 
 ---
 
