@@ -1,8 +1,8 @@
 # 📈 Financial Mastery Roadmap
 
-> **Personal financial knowledge roadmap** — 28-week curriculum for advancing from assessment score of 94% to expert-level financial analysis, built for an investor with MIP/ML/statistics background investing in both BIST and S&P 500 from Turkey.
-
-## 🌐 Live Site
+> **Personal financial knowledge roadmap** — 28-week curriculum for advancing expert-level financial analysis
+>
+> ## 🌐 Live Site
 
 **[AhmetY21.github.io/finance-roadmap](https://AhmetY21.github.io/finance-roadmap)**
 
@@ -48,44 +48,6 @@ Commit and push. The workflow will calculate your study day automatically from t
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/AhmetY21/finance-roadmap.git
-cd finance-roadmap
-
-# 2. Edit progress.json — set your start date
-# 3. Commit and push
-git add progress.json
-git commit -m "Set study start date"
-git push
-
-# 4. Enable GitHub Pages:
-#    Settings → Pages → Deploy from branch → main → / (root)
-#
-# 5. Enable Issues:
-#    Settings → Features → tick Issues
-#
-# 6. The setup-labels workflow runs automatically on push
-#    and creates the 'study-reminder' label
-```
-
----
-
-## 📁 Repository Structure
-
-```
-finance-roadmap/
-├── index.html                          # Main roadmap site (GitHub Pages)
-├── progress.json                       # Study progress tracker (set start_date here)
-├── README.md
-└── .github/
-    └── workflows/
-        ├── daily-reminder.yml          # Opens daily study Issue at 10:00 Ankara time
-        └── setup-labels.yml            # Creates required GitHub labels on first push
-```
-
 ---
 
 ## 🔑 Key Resources
@@ -101,14 +63,4 @@ All free, all online:
 
 ---
 
-## 📊 Profile
 
-- **Background:** BSc Industrial Engineering · MSc Operations Research
-- **Experience:** 4 Years Banking (Turkey)
-- **Current Investments:** BIST + S&P 500
-- **Assessment Score:** 94% · Gap: Beta / CAPM Mechanics
-- **Tools:** MIP · Machine Learning · Data Science · Statistics
-
----
-
-*Generated with Claude — Anthropic · 2026*
