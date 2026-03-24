@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Mastery Roadmap — AhmetY21</title>
+<title>Financial Mastery Roadmap — Updated from 100-Question Assessment</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -238,6 +238,22 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 .final-section{max-width:760px;margin-top:56px;padding-top:32px;border-top:1px solid var(--border);}
 .final-section h2{font-family:'Lora',serif;font-size:1.5rem;font-weight:600;color:var(--text);margin-bottom:14px;}
 
+/* ── ASSESSMENT SCORE PILLS ── */
+.score-row{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0;}
+.score-pill{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 11px;border-radius:20px;border:1px solid var(--border);background:var(--bg2);color:var(--text-muted);white-space:nowrap;}
+.score-pill.good{background:#ecf8ec;border-color:#7abf7a;color:#2a6a2a;}
+.score-pill.ok{background:var(--amber-bg);border-color:var(--amber-bdr);color:var(--amber);}
+.score-pill.weak{background:var(--rose-bg);border-color:var(--rose-bdr);color:var(--rose);}
+/* ── GAP CALLOUT ── */
+.gap-callout{padding:13px 15px;background:var(--rose-bg);border:1px solid var(--rose-bdr);border-left:3px solid var(--rose);font-size:12.5px;color:var(--rose);line-height:1.65;margin-top:10px;}
+.gap-callout strong{color:var(--rose);}
+/* ── NEW MODULE BADGE ── */
+.badge-new{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 7px;background:#e8f5f3;border:1px solid #7accc4;color:#1a7a6e;margin-left:6px;vertical-align:middle;}
+/* ── DIFF BADGES ── */
+.diff-easy{font-size:10px;padding:1px 7px;background:#ecf8ec;border:1px solid #7abf7a;color:#2a6a2a;border-radius:10px;white-space:nowrap;}
+.diff-medium{font-size:10px;padding:1px 7px;background:var(--amber-bg);border:1px solid var(--amber-bdr);color:var(--amber);border-radius:10px;white-space:nowrap;}
+.diff-hard{font-size:10px;padding:1px 7px;background:var(--rose-bg);border:1px solid var(--rose-bdr);color:var(--rose);border-radius:10px;white-space:nowrap;}
+
 @media(max-width:900px){
   .sidebar{display:none;}
   .main{margin-left:0;padding:28px 18px 80px;}
@@ -253,33 +269,36 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 <!-- ══════════════ SIDEBAR ══════════════ -->
 <nav class="sidebar">
   <div class="sidebar-brand">
-    <span class="sidebar-badge">94% · Advanced</span>
+    <span class="sidebar-badge">71% · 100-Question Assessment</span>
     <h2>Financial Mastery Roadmap</h2>
   </div>
 
   <div class="nav-group">
     <div class="nav-group-label">Overview</div>
-    <a href="#overview" class="nav-link active" data-s="overview"><span class="nav-dot"></span>Profile & Path</a>
+    <a href="#overview" class="nav-link active" data-s="overview"><span class="nav-dot"></span>Profile &amp; Path</a>
   </div>
 
   <div class="nav-group">
-    <div class="nav-group-label">Phase I — Fix the Gap (Wks 1–4)</div>
+    <div class="nav-group-label">Phase I — Critical Gaps (Wks 1–8)</div>
+    <a href="#m-deriv" class="nav-link" data-s="m-deriv"><span class="nav-dot"></span>Derivatives &amp; Hedging ★</a>
+    <a href="#m-quant" class="nav-link" data-s="m-quant"><span class="nav-dot"></span>Quantitative Finance ★</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Phase II — Sharpen (Wks 9–18)</div>
     <a href="#m1" class="nav-link" data-s="m1"><span class="nav-dot"></span>Beta &amp; CAPM</a>
     <a href="#m2" class="nav-link" data-s="m2"><span class="nav-dot"></span>Equity Valuation &amp; DCF</a>
+    <a href="#m3" class="nav-link" data-s="m3"><span class="nav-dot"></span>Portfolio Construction</a>
+    <a href="#m-fi" class="nav-link" data-s="m-fi"><span class="nav-dot"></span>Fixed Income &amp; Inv. Basics ★</a>
+    <a href="#m6" class="nav-link" data-s="m6"><span class="nav-dot"></span>Behavioural Finance</a>
   </div>
 
   <div class="nav-group">
-    <div class="nav-group-label">Phase II — Build the System (Wks 5–14)</div>
-    <a href="#m3" class="nav-link" data-s="m3"><span class="nav-dot"></span>Portfolio Construction</a>
+    <div class="nav-group-label">Phase III — Build &amp; Excel (Wks 19–28)</div>
     <a href="#m4" class="nav-link" data-s="m4"><span class="nav-dot"></span>Factor Investing</a>
     <a href="#m5" class="nav-link" data-s="m5"><span class="nav-dot"></span>Advanced Macro &amp; Turkey</a>
-    <a href="#m6" class="nav-link" data-s="m6"><span class="nav-dot"></span>Behavioral Finance</a>
-  </div>
-
-  <div class="nav-group">
-    <div class="nav-group-label">Phase III — Excel (Wks 15–28)</div>
     <a href="#m7" class="nav-link" data-s="m7"><span class="nav-dot"></span>Quant Investing &amp; Python</a>
-    <a href="#m8" class="nav-link" data-s="m8"><span class="nav-dot"></span>Derivatives &amp; Hedging</a>
+    <a href="#m8" class="nav-link" data-s="m8"><span class="nav-dot"></span>Derivatives (Advanced)</a>
     <a href="#m9" class="nav-link" data-s="m9"><span class="nav-dot"></span>BIST Deep Specialization</a>
   </div>
 
@@ -292,7 +311,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
   <div class="sidebar-footer">
     <span class="prog-label">Modules Explored</span>
     <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
-    <span class="prog-text" id="prog-text">0 / 9 modules</span>
+    <span class="prog-text" id="prog-text">0 / 11 modules</span>
   </div>
 </nav>
 
@@ -301,48 +320,245 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
 <!-- ── HERO ── -->
 <section class="hero" id="overview">
-  <div class="hero-eyebrow">Advanced Track · Personalised</div>
-  <h1>Close the Gap.<br>Build the <em>Edge.</em></h1>
-  <p>You scored 94% — solidly advanced. Your one miss was on <strong>beta calculation and CAPM mechanics</strong>, which is a foundational pricing concept, not a math problem. This roadmap corrects that first, then builds a systematic investment framework that leverages your MIP, machine learning, and statistics background without requiring stochastic calculus or measure theory. Every resource listed is free and accessible online.</p>
+  <div class="hero-eyebrow">Updated from 100-Question Assessment · Advanced Level</div>
+  <h1>Know the Gaps.<br>Build the <em>System.</em></h1>
+  <p>This roadmap has been updated from a 100-question assessment across 10 sections. The score of 71% (71/100) reveals a more detailed picture than the earlier 18-question test — two critical gaps in Derivatives and Quantitative Finance, plus targeted weaknesses in Equity Analysis and Portfolio Theory. The original 9 modules are preserved and enhanced; 2 new modules address the critical gaps directly. Every resource remains free and online.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="val">94%</span><span class="lbl">Assessment Score</span></div>
-    <div class="hero-stat"><span class="val">β</span><span class="lbl">The One Gap</span></div>
+    <div class="hero-stat"><span class="val">71%</span><span class="lbl">100-Q Score</span></div>
+    <div class="hero-stat"><span class="val">2</span><span class="lbl">Critical Gaps</span></div>
     <div class="hero-stat"><span class="val">28</span><span class="lbl">Weeks Total</span></div>
-    <div class="hero-stat"><span class="val">9</span><span class="lbl">Core Modules</span></div>
+    <div class="hero-stat"><span class="val">11</span><span class="lbl">Core Modules</span></div>
+  </div>
+  <div class="score-row">
+    <span class="score-pill weak">Derivatives 4/10</span>
+    <span class="score-pill weak">Quantitative Finance 5/10</span>
+    <span class="score-pill ok">Equity Analysis 6/10</span>
+    <span class="score-pill ok">Investment Basics 7/10</span>
+    <span class="score-pill ok">Portfolio Theory 7/10</span>
+    <span class="score-pill ok">Behavioural Finance 7/10</span>
+    <span class="score-pill good">Macroeconomics 8/10</span>
+    <span class="score-pill good">Fixed Income 8/10</span>
+    <span class="score-pill good">Personal Finance 9/10</span>
+    <span class="score-pill good">Turkey &amp; EM 10/10</span>
   </div>
   <div class="alert-banner">
-    <strong>What the beta question reveals:</strong> Beta is the slope coefficient of a linear regression of a stock's returns on the market's returns. You already know OLS regression deeply from your statistics background. The gap is the financial interpretation layer — what beta means for pricing, how it behaves in BIST's thin-trading environment, and why Damodaran's bottom-up beta is more reliable than a regression beta for emerging market stocks.
+    <strong>What changed from the 18-question test:</strong> The 94% on 18 questions masked two significant blind spots — Derivatives (4/10) and Quantitative Finance (5/10) — that only became visible at scale. These are now Phase I priorities. Your Turkey &amp; EM knowledge (10/10) and Personal Finance (9/10) are confirmed strengths. The roadmap structure is preserved but phase ordering is updated to address the real gaps first.
   </div>
 </section>
 
 <!-- ── TIMELINE ── -->
 <div class="timeline-strip">
-  <div class="tstrip-item pa"><span class="tstrip-wk">Wks 1–2</span><div class="tstrip-focus">Beta, CAPM &amp; Cost of Capital</div></div>
-  <div class="tstrip-item pa"><span class="tstrip-wk">Wks 3–4</span><div class="tstrip-focus">Equity Valuation &amp; DCF</div></div>
-  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 5–7</span><div class="tstrip-focus">Portfolio Construction</div></div>
-  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 8–10</span><div class="tstrip-focus">Factor Investing</div></div>
-  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 11–12</span><div class="tstrip-focus">Advanced Macro &amp; Turkey</div></div>
-  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 13–14</span><div class="tstrip-focus">Behavioral Finance</div></div>
-  <div class="tstrip-item pc"><span class="tstrip-wk">Wks 15–20</span><div class="tstrip-focus">Quant Finance in Python</div></div>
-  <div class="tstrip-item pc"><span class="tstrip-wk">Wks 21–24</span><div class="tstrip-focus">Derivatives &amp; Hedging</div></div>
-  <div class="tstrip-item pd"><span class="tstrip-wk">Wks 25–28</span><div class="tstrip-focus">BIST Deep Specialization</div></div>
+  <div class="tstrip-item pa"><span class="tstrip-wk">Wks 1–4</span><div class="tstrip-focus">Derivatives &amp; Options ★</div></div>
+  <div class="tstrip-item pa"><span class="tstrip-wk">Wks 5–8</span><div class="tstrip-focus">Quant Finance &amp; Python ★</div></div>
+  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 9–10</span><div class="tstrip-focus">Beta, CAPM &amp; DCF</div></div>
+  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 11–13</span><div class="tstrip-focus">Portfolio Construction</div></div>
+  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 14–15</span><div class="tstrip-focus">Fixed Income &amp; Inv. Basics ★</div></div>
+  <div class="tstrip-item pb"><span class="tstrip-wk">Wks 16–17</span><div class="tstrip-focus">Behavioural Finance</div></div>
+  <div class="tstrip-item pc"><span class="tstrip-wk">Wks 18–20</span><div class="tstrip-focus">Factor Investing</div></div>
+  <div class="tstrip-item pc"><span class="tstrip-wk">Wks 21–22</span><div class="tstrip-focus">Advanced Macro &amp; Turkey</div></div>
+  <div class="tstrip-item pd"><span class="tstrip-wk">Wks 23–26</span><div class="tstrip-focus">Quant System &amp; BIST Research</div></div>
+  <div class="tstrip-item pd"><span class="tstrip-wk">Wks 27–28</span><div class="tstrip-focus">Capstone &amp; Live System</div></div>
 </div>
 
 <!-- ════════════════════════════════════
-     PHASE I
+     PHASE I — NEW: CRITICAL GAPS
 ════════════════════════════════════ -->
-<section class="phase" id="phase1">
+<section class="phase" id="phase0">
   <div class="phase-hdr">
     <div class="phase-num">I</div>
     <div class="phase-info">
-      <span class="phase-tag">Phase One · Weeks 1–4</span>
-      <h2>Fix the Gap</h2>
-      <p>Close the beta/CAPM miss directly and sharpen your equity valuation toolkit. Both modules produce a hands-on deliverable using real BIST data so the concepts anchor immediately to your actual portfolio.</p>
-      <div class="phase-time">⏱ 4 weeks · ~5–6 hrs/week</div>
+      <span class="phase-tag">Phase One · Weeks 1–8 · NEW from 100-Question Assessment</span>
+      <h2>Close the Critical Gaps</h2>
+      <p>The 100-question assessment revealed two foundational gaps invisible in the 18-question test: Derivatives (4/10) and Quantitative Finance (5/10). These move to the front because they underpin everything else — you cannot hedge a portfolio you don't understand, and your ML/stats toolkit is wasted without the finance-specific translation layer. Both modules are entirely new additions to this roadmap.</p>
+      <div class="phase-time">⏱ 8 weeks · ~5 hrs/week</div>
     </div>
   </div>
 
   <div class="modules">
+
+  <!-- M-DERIV: DERIVATIVES (NEW) -->
+  <div class="module p1" id="m-deriv">
+    <div class="module-top" onclick="toggleMod('m-deriv')">
+      <div class="module-bar"></div>
+      <div class="module-hdr">
+        <span class="module-icon">🎯</span>
+        <div class="module-title-g">
+          <div class="module-title">Derivatives — Options, Futures &amp; Portfolio Hedging <span class="badge-new">NEW</span></div>
+          <div class="module-sub">4/10 on assessment · Put-call parity · Greeks · BSM · VIOP TRY hedge</div>
+        </div>
+        <div class="module-meta">
+          <span class="module-dur">Wks 1–4 · ~20 hrs</span>
+          <span class="module-badge b-crit">Critical Gap</span>
+          <span class="module-chev">▼</span>
+        </div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="mod-grid">
+        <div class="mod-left">
+          <div class="content-sec">
+            <div class="sec-label">Assessment Finding</div>
+            <div class="gap-callout"><strong>4/10 — foundational concepts are unclear.</strong> At this score the gaps are likely: put-call parity mechanics, option Greeks beyond delta, Black-Scholes assumptions and why they break (volatility smile), and futures pricing via cost-of-carry. These directly affect how you hedge your BIST and S&amp;P 500 positions using VIOP and SPX puts. This is not an advanced topic — it is core portfolio management.</div>
+            <div class="why-box">You don't need to be an options trader. You need derivatives to: (1) hedge S&amp;P 500 holdings during US downturns with index puts; (2) use VIOP USD/TRY futures to hedge TRY depreciation on BIST holdings; (3) understand structured products your bank sells; (4) read VIX and BIST implied volatility as market sentiment signals. This module builds those practical skills bottom-up.</div>
+            <div class="turkey-box"><strong>🇹🇷 VIOP — Your Practical TRY Hedge:</strong> VIOP (Vadeli İşlem ve Opsiyon Piyasası) on Borsa Istanbul offers USD/TRY and EUR/TRY futures, BIST-30 index futures, and single-stock options. If you hold 1M TRY in BIST stocks and fear TRY depreciation, buying USD/TRY futures locks in your exchange rate. Understanding futures pricing (cost-of-carry model) lets you evaluate whether the hedge cost is fair before placing any trade.</div>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Week-by-Week Curriculum</div>
+            <table class="curr">
+              <thead><tr><th>Week</th><th>Topic</th><th>Deliverable</th></tr></thead>
+              <tbody>
+                <tr><td>Wk 1</td><td><div class="t-main">Options payoffs, moneyness &amp; put-call parity</div><div class="t-sub">Call/put payoff diagrams at expiry, intrinsic vs time value, ITM/ATM/OTM, put-call parity derivation and arbitrage enforcement: C − P = S − Ke⁻ʳᵀ</div></td><td>Draw all 4 basic payoff diagrams by hand. Verify put-call parity numerically with a live SPX option chain from CBOE.</td></tr>
+                <tr><td>Wk 2</td><td><div class="t-main">Greeks: δ, γ, θ, ν and portfolio implications</div><div class="t-sub">Delta as hedge ratio and ITM probability approximation, gamma as convexity of delta, theta decay acceleration near expiry, vega and implied volatility sensitivity</div></td><td>Build a Python Greeks calculator using the BSM formula. For one option position, calculate and plot the full Greek profile as spot price varies.</td></tr>
+                <tr><td>Wk 3</td><td><div class="t-main">Black-Scholes: assumptions, formula &amp; vol smile</div><div class="t-sub">BSM formula and inputs, constant-vol assumption and why it fails, why equity skew exists (crash protection demand), reading an implied vol surface, VIX construction from SPX options</div></td><td>Implement BSM pricer in Python (~20 lines). Price a real SPX put. Compare implied vol across strikes — plot the vol smile and explain what it implies about crash risk.</td></tr>
+                <tr><td>Wk 4</td><td><div class="t-main">Futures pricing, VIOP mechanics &amp; TRY hedging</div><div class="t-sub">Cost-of-carry model F = S×e^(rT), basis risk, BIST-30 and USD/TRY futures contract specs on VIOP, delta-hedging a TRY-denominated equity portfolio, rolling futures positions</div></td><td>Model a TRY hedge: for your current BIST holdings (in TRY), calculate the number of VIOP USD/TRY contracts needed, the carry cost, and the break-even TRY depreciation that makes hedging worthwhile.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Milestone</div>
+            <div class="milestone">
+              <span class="ms-label">🏁 Derivatives Toolkit Notebook</span>
+              <div class="ms-text">A Jupyter notebook with three sections: (1) BSM pricer with vol smile plot for a real SPX option chain; (2) Greeks dashboard — delta, gamma, theta, vega as functions of spot and time; (3) VIOP TRY hedge calculator — inputs: BIST position size in TRY, USD/TRY rate, contract size; outputs: number of contracts, annualised hedge cost, break-even depreciation. This becomes your practical hedging reference.</div>
+            </div>
+          </div>
+        </div>
+        <div class="mod-right">
+          <div class="sec-label">Resources — All Free</div>
+          <div class="res-grid">
+            <div class="res-card">
+              <span class="res-tag rt-lecture">MIT OCW</span>
+              <div class="res-name"><a href="https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/pages/video-lectures-and-slides/options/" target="_blank">MIT 15.401 — Options (Andrew Lo)</a></div>
+              <div class="res-note">Full options module: payoffs, put-call parity, BSM, Greeks. Video + slides + problem sets with solutions. No stochastic calculus. <strong>Start here.</strong></div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-lecture">MIT OCW</span>
+              <div class="res-name"><a href="https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/pages/video-lectures-and-slides/forward-and-futures-contracts/" target="_blank">MIT 15.401 — Forwards &amp; Futures</a></div>
+              <div class="res-note">Covers futures pricing (cost-of-carry), forward vs futures distinctions, and hedging mechanics. Direct preparation for VIOP futures modelling.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-video">YouTube</span>
+              <div class="res-name"><a href="https://www.youtube.com/@PatrickBoyleonFinance" target="_blank">Patrick Boyle — Derivatives playlist</a></div>
+              <div class="res-note">Quant hedge fund manager and King's College professor. His options and Greeks videos are the clearest practitioner-level explanations available free. Also covers vol surface and VIOP-adjacent EM topics.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-lecture">Yale OCW</span>
+              <div class="res-name"><a href="https://oyc.yale.edu/economics/econ-252" target="_blank">Shiller — Financial Markets, Lectures 19–21</a></div>
+              <div class="res-note">Forwards, futures, and options with historical and institutional context. Shiller's perspective adds depth beyond formulas — why these markets exist and how they evolved.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-data">VIOP data</span>
+              <div class="res-name"><a href="https://www.borsaistanbul.com/en/data/data/viop-data" target="_blank">Borsa Istanbul — VIOP market data</a></div>
+              <div class="res-note">Free historical VIOP data: USD/TRY futures, BIST-30 futures, single-stock options. Review contract specs, open interest, and bid-ask spreads before building any hedge model.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-python">Python</span>
+              <div class="res-name"><a href="https://github.com/saidsurucu/borsapy" target="_blank">borsapy — VIOP data in Python</a></div>
+              <div class="res-note">Fetches VIOP derivatives data alongside BIST equities and TCMB macro series. Use for building the hedge calculator milestone and automating VIOP contract data retrieval.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M-QUANT: QUANTITATIVE FINANCE (NEW) -->
+  <div class="module p1" id="m-quant">
+    <div class="module-top" onclick="toggleMod('m-quant')">
+      <div class="module-bar"></div>
+      <div class="module-hdr">
+        <span class="module-icon">⚙️</span>
+        <div class="module-title-g">
+          <div class="module-title">Quantitative Finance — Apply Your ML &amp; Stats Toolkit <span class="badge-new">NEW</span></div>
+          <div class="module-sub">5/10 on assessment · Walk-forward CV · Sharpe annualisation · Cointegration · Kelly · PCA</div>
+        </div>
+        <div class="module-meta">
+          <span class="module-dur">Wks 5–8 · ~20 hrs</span>
+          <span class="module-badge b-crit">Critical Gap</span>
+          <span class="module-chev">▼</span>
+        </div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="mod-grid">
+        <div class="mod-left">
+          <div class="content-sec">
+            <div class="sec-label">Assessment Finding</div>
+            <div class="gap-callout"><strong>5/10 despite MIP/ML/statistics background.</strong> The gap is the finance-specific translation of tools you already own: time-series cross-validation (walk-forward, not k-fold shuffle), correct Sharpe annualisation across sampling frequencies, cointegration vs correlation distinction, the information ratio and Fundamental Law of Active Management, and Kelly criterion with estimation error. These are your own tools — a thin translation layer is all that is needed.</div>
+            <div class="why-box">This is your biggest untapped asymmetric advantage. Most BIST investors rely on fundamental intuition and broker research. A systematic, code-driven process with rigorous backtesting methodology is rare in Turkish markets — and BIST's relative inefficiency means systematic approaches may find more persistent alpha than in the S&amp;P 500. Your MIP background is particularly valuable for portfolio construction with complex constraints.</div>
+            <div class="eng-badge"><strong>🔬 Your Toolkit → Finance Problems:</strong> MIP → portfolio optimisation with integer/binary constraints (lot sizes, include/exclude) · ML classification → regime detection, factor score construction · Statistics → hypothesis testing for factor significance, cross-validation · Monte Carlo → retirement planning, VaR/CVaR · PCA → factor decomposition of equity return covariance</div>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Week-by-Week Curriculum</div>
+            <table class="curr">
+              <thead><tr><th>Week</th><th>Topic</th><th>Deliverable</th></tr></thead>
+              <tbody>
+                <tr><td>Wk 5</td><td><div class="t-main">Factor model regression &amp; alpha interpretation</div><div class="t-sub">FF3F OLS regression on portfolio returns, alpha as Jensen's alpha, R² meaning, factor exposure report, annualising Sharpe correctly: Sharpe_annual = Sharpe_daily × √252</div></td><td>Run a FF3F regression on your BIST portfolio returns using AQR factor data. How much alpha remains after factor adjustment? Is it statistically significant (t > 3.0)?</td></tr>
+                <tr><td>Wk 6</td><td><div class="t-main">Backtesting: walk-forward CV, look-ahead bias, multiple testing</div><div class="t-sub">Why k-fold shuffle destroys temporal ordering, expanding vs rolling windows, survivorship bias in BIST data, Bonferroni/BH corrections, Harvey &amp; Liu t-stat threshold (~3.0 in 2025)</div></td><td>Take a simple BIST momentum strategy. Backtest with proper walk-forward splits using vectorbt. Compare in-sample Sharpe vs out-of-sample. Does the alpha survive?</td></tr>
+                <tr><td>Wk 7</td><td><div class="t-main">Cointegration, pairs trading &amp; information ratio</div><div class="t-sub">Engle-Granger two-step cointegration test, ADF test on spread residuals, spread construction for pairs trading, IR = α / TE, Fundamental Law: IR = IC × √BR</div></td><td>Test cointegration between BIST-100 and S&amp;P 500 (both in USD). If cointegrated, build a mean-reversion signal on the spread and backtest it with walk-forward validation.</td></tr>
+                <tr><td>Wk 8</td><td><div class="t-main">Kelly criterion, PCA on returns &amp; Monte Carlo</div><div class="t-sub">Full vs half-Kelly (estimation error), PCA on equity return covariance — first PC is market factor, PCA-as-factor-model, Monte Carlo for retirement: log-normal returns, TRY inflation scenarios</div></td><td>Build a Monte Carlo retirement simulator: monthly savings (TRY), BIST/SPX allocation, TRY CPI assumption. Output: wealth distribution at age 55/60/65 in both TRY and USD-equivalent.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Milestone</div>
+            <div class="milestone">
+              <span class="ms-label">🏁 Quantitative Portfolio Analytics System</span>
+              <div class="ms-text">A Python script that runs weekly and outputs: (1) FF3F factor exposure report for your portfolio; (2) rolling Sharpe/drawdown chart; (3) cointegration monitor for BIST vs SPX spread; (4) rebalancing signal vs your IPS allocation bands; (5) Monte Carlo retirement projection updated with latest returns. This is your personal quantitative investment office — run it every Sunday.</div>
+            </div>
+          </div>
+        </div>
+        <div class="mod-right">
+          <div class="sec-label">Resources — All Free</div>
+          <div class="res-grid">
+            <div class="res-card">
+              <span class="res-tag rt-python">Notebooks</span>
+              <div class="res-name"><a href="https://github.com/quantrocket-codeload/quant-finance-lectures" target="_blank">Quantopian Lecture Series (40+ Jupyter notebooks)</a></div>
+              <div class="res-note">Archived Quantopian education platform. Lectures 14–25 cover factor models, pairs trading, cointegration, and backtesting methodology. Creative Commons licensed. Start at Lecture 14.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-paper">SSRN Paper</span>
+              <div class="res-name"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3341728" target="_blank">Harvey &amp; Liu — "A Census of the Factor Zoo"</a></div>
+              <div class="res-note">Free PDF. 400+ factors documented, multiple testing problem explained, t-stat thresholds derived. Your stats background makes this immediately readable — the most important methodological paper in empirical finance.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-data">AQR datasets</span>
+              <div class="res-name"><a href="https://www.aqr.com/Insights/Datasets" target="_blank">AQR free factor datasets (updated monthly)</a></div>
+              <div class="res-note">Betting Against Beta, Quality Minus Junk, Value and Momentum Everywhere — all CSV downloads. Use for FF3F regression without building your own factor return data pipeline.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-python">Python</span>
+              <div class="res-name"><a href="https://github.com/stefan-jansen/zipline-reloaded" target="_blank">Zipline-Reloaded — event-driven backtesting</a></div>
+              <div class="res-note">Active fork of Quantopian's engine. Handles realistic transaction costs, slippage, and order execution. The standard for Python strategy backtesting. Supports BIST data via custom bundles.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-lecture">Free course</span>
+              <div class="res-name"><a href="https://python-programming.quantecon.org/intro.html" target="_blank">QuantEcon — Python for Economics &amp; Finance</a></div>
+              <div class="res-note">Nobel laureate Thomas Sargent's free course. Covers time series, dynamic programming, and asset pricing computations. Graduate-level but manageable with your background.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /modules phase 0 -->
+</section>
+
+<!-- ════════════════════════════════════
+     PHASE II (was Phase I) — SHARPEN
+════════════════════════════════════ -->
+<section class="phase" id="phase1-updated">
+  <div class="phase-hdr">
+    <div class="phase-num">II</div>
+    <div class="phase-info">
+      <span class="phase-tag">Phase Two · Weeks 9–17 · Updated Priority</span>
+      <h2>Sharpen the Core</h2>
+      <p>Beta/CAPM, equity valuation, portfolio construction, and targeted gap-filling for Fixed Income and Investment Basics. All original module content is preserved below — enhanced with assessment findings that pinpoint the exact sub-topics to focus on within each section.</p>
+      <div class="phase-time">⏱ 9 weeks · ~5 hrs/week</div>
+    </div>
+  </div>
+  <div class="modules">
+
 
   <!-- M1: BETA & CAPM -->
   <div class="module p1" id="m1">
@@ -365,6 +581,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <div class="mod-grid">
         <div class="mod-left">
           <div class="content-sec">
+            <div class="sec-label">Assessment Finding — 100-Question Test</div>
+            <div class="gap-callout"><strong>Equity Analysis 6/10</strong> — Beta and CAPM mechanics were directly tested. The likely gap: understanding how β = 1.5 flows through to an expected return via the SML, why regression beta is unreliable for thinly-traded BIST stocks (staleness bias), and how to construct bottom-up beta using Damodaran's sector data. This module addresses all three.</div>
             <div class="sec-label">Why You Missed It &amp; Why It Matters</div>
             <div class="why-box">Beta is defined as <strong>β = Cov(Rᵢ, Rₘ) / Var(Rₘ)</strong> — the OLS slope of a stock's excess return regressed on the market's excess return. You know this math. The miss was likely on the interpretation: what β = 1.5 means for expected return via the Security Market Line, or how to compute a bottom-up beta for a BIST company with thinly-traded shares where regression beta is noisy and unreliable. For Turkish investors, understanding the full chain — risk-free rate → equity risk premium → country risk premium → beta → cost of equity → WACC — is essential for any DCF valuation.</div>
             <div class="eng-badge"><strong>🔬 Your Existing Skill Maps Here:</strong> Beta estimation is OLS with one regressor. You already know how to run this, interpret residuals, and understand confidence intervals. The financial layer to add: (1) why monthly data over 5 years is convention, (2) what the intercept (Jensen's alpha) means, (3) why for BIST stocks you should prefer bottom-up beta constructed from industry peers rather than your stock's thin trading history.</div>
@@ -433,7 +651,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">DCF · EV/EBITDA · P/E Adjusted for EM · BIST 8× vs S&amp;P 22× — Are They Comparable?</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 3–4 · ~12 hrs</span>
+          <span class="module-dur">Wks 9–10 · ~12 hrs</span>
           <span class="module-badge b-crit">Core Skill</span>
           <span class="module-chev">▼</span>
         </div>
@@ -443,6 +661,8 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <div class="mod-grid">
         <div class="mod-left">
           <div class="content-sec">
+            <div class="sec-label">Assessment Finding — 100-Question Test</div>
+            <div class="gap-callout"><strong>Equity Analysis 6/10</strong> — DCF-specific gaps likely include: the exact FCFF formula (EBIT(1−t) + D&amp;A − ΔWC − Capex), terminal value instability when g approaches WACC, IAS 29 hyperinflation accounting restatement (applies to BIST companies since Turkey exceeded the 100% cumulative 3-year threshold), and accruals as an earnings quality signal. All are addressed in the curriculum below.</div>
             <div class="sec-label">Why This Matters</div>
             <div class="why-box">The mechanics of DCF — discounting future cash flows — is just NPV from your engineering background. The financial complexity is in the inputs: what to use as FCF (FCFF vs FCFE), how to handle terminal value (Gordon Growth vs Exit Multiple), and critically how to set the discount rate for a Turkish company with TRY revenues and USD debt. The cross-market P/E comparison is a conceptual trap: a BIST stock at 8× P/E in a 60% inflation environment may be more expensive in real terms than an S&amp;P 500 stock at 22× P/E.</div>
             <div class="turkey-box"><strong>🇹🇷 EM Adjustment Required:</strong> Damodaran's January 2026 data shows Turkey's equity risk premium at ~10–12%, significantly higher than the US (~5.5%). A DCF for a Turkish company must embed this via a higher discount rate — which mechanically lowers the fair value. Many retail BIST investors ignore this and wonder why their "cheap" stocks stay cheap. Your engineering intuition about discount rates should make this click immediately.</div>
@@ -503,16 +723,16 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 </section>
 
 <!-- ════════════════════════════════════
-     PHASE II
+     PHASE III (was Phase II) — BUILD THE SYSTEM
 ════════════════════════════════════ -->
 <section class="phase" id="phase2">
   <div class="phase-hdr">
-    <div class="phase-num">II</div>
+    <div class="phase-num">III</div>
     <div class="phase-info">
-      <span class="phase-tag">Phase Two · Weeks 5–14</span>
+      <span class="phase-tag">Phase Three · Weeks 11–17</span>
       <h2>Build the System</h2>
       <p>Move from single-stock analysis to systematic portfolio management. Layer in factor investing, advanced Turkey macro, and behavioural guardrails. Build a repeatable process — not just knowledge.</p>
-      <div class="phase-time">⏱ 10 weeks · ~5 hrs/week</div>
+      <div class="phase-time">⏱ 7 weeks · ~5 hrs/week</div>
     </div>
   </div>
 
@@ -529,7 +749,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">Markowitz · Efficient Frontier · BIST/SPX Correlation · Currency Risk · Position Sizing</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 5–7 · ~15 hrs</span>
+          <span class="module-dur">Wks 11–13 · ~15 hrs</span>
           <span class="module-badge b-high">High Value</span>
           <span class="module-chev">▼</span>
         </div>
@@ -539,8 +759,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <div class="mod-grid">
         <div class="mod-left">
           <div class="content-sec">
-            <div class="sec-label">Why This Matters</div>
-            <div class="why-box">Mean-variance optimisation is a quadratic programme: minimise portfolio variance subject to a return target constraint and weights summing to 1. You can solve this right now using <code>scipy.optimize</code> or CVXPY. The financial content to add: covariance matrix estimation (sample vs shrinkage), the efficient frontier, why in-sample optimisation over-fits (directly connects to your statistics background), and how TRY/USD correlation affects your total portfolio return when you hold both BIST and S&amp;P 500.</div>
+            <div class="sec-label">Assessment Finding — 100-Question Test</div>
+            <div class="gap-callout"><strong>Portfolio Theory 7/10</strong> — likely gaps in: Ledoit-Wolf covariance shrinkage (why sample covariance is noisy when T/N &lt; 10), CVaR vs VaR distinction (CVaR is the mean of the tail beyond VaR), risk parity allocation mechanics (equal risk contribution vs equal weight), and Jensen's alpha calculation. The Markowitz framework is clear; the implementation details need reinforcing.</div>
+            <div class="sec-label">Why This Matters</div>: minimise portfolio variance subject to a return target constraint and weights summing to 1. You can solve this right now using <code>scipy.optimize</code> or CVXPY. The financial content to add: covariance matrix estimation (sample vs shrinkage), the efficient frontier, why in-sample optimisation over-fits (directly connects to your statistics background), and how TRY/USD correlation affects your total portfolio return when you hold both BIST and S&amp;P 500.</div>
             <div class="turkey-box"><strong>🇹🇷 Hidden Risk:</strong> Your banking salary correlates with Turkish macro — if Turkey enters a severe recession or lira crisis, your income and your BIST holdings fall simultaneously. True portfolio thinking means treating your future salary stream as a TRY-denominated bond in the optimisation. This typically implies holding less BIST and more USD-denominated assets than a naive allocation would suggest.</div>
           </div>
           <div class="content-sec">
@@ -602,7 +823,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">Fama-French 5-Factor · AQR Datasets · Factor Zoo · BIST Factor Evidence</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 8–10 · ~15 hrs</span>
+          <span class="module-dur">Wks 18–20 · ~15 hrs</span>
           <span class="module-badge b-high">High Value</span>
           <span class="module-chev">▼</span>
         </div>
@@ -680,7 +901,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">Fed Cycles · EM Capital Flows · TRY Crisis Anatomy · TCMB Data Literacy</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 11–12 · ~10 hrs</span>
+          <span class="module-dur">Wks 21–22 · ~10 hrs</span>
           <span class="module-badge b-high">High Value</span>
           <span class="module-chev">▼</span>
         </div>
@@ -691,7 +912,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
         <div class="mod-left">
           <div class="content-sec">
             <div class="sec-label">Why This Matters</div>
-            <div class="why-box">You scored 6/6 on macro — but there is a difference between knowing the concepts and having an <em>actionable framework</em>. This module converts your macro knowledge into explicit portfolio signals: when to reduce BIST allocation, when to increase USD exposure, and how to read TCMB's weekly bulletin before the market prices in the information. Your banking background gives you direct access to primary sources most retail investors never read.</div>
+            <div class="why-box">You scored 8/10 on Macroeconomics in the 100-question assessment — a confirmed strength. The focus here shifts from learning concepts to building an <em>actionable framework</em>: converting macro knowledge into explicit portfolio signals, reading TCMB's weekly bulletin before the market, and automating a live Turkey macro dashboard in Python. Your banking background gives you direct access to primary sources most retail investors never read.</div>
             <div class="turkey-box"><strong>🇹🇷 Data Edge:</strong> TCMB's EVDS API gives you real-time access to: policy rate, net FX reserves (critical — gross vs swap-adjusted net are very different), balance of payments, foreign investor flows in equity and debt. These are the exact data series that EM macro funds watch daily. Your Python skills let you automate a dashboard that updates these automatically — a genuine information advantage in BIST.</div>
           </div>
           <div class="content-sec">
@@ -745,7 +966,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">Protect your analytical edge from your own biases</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 13–14 · ~10 hrs</span>
+          <span class="module-dur">Wks 16–17 · ~10 hrs</span>
           <span class="module-badge b-std">High Leverage</span>
           <span class="module-chev">▼</span>
         </div>
@@ -755,8 +976,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <div class="mod-grid">
         <div class="mod-left">
           <div class="content-sec">
-            <div class="sec-label">Why This Matters</div>
-            <div class="why-box">Analytical ability creates a specific behavioural risk: rationalization. The ability to build convincing models makes it easier to justify staying in losing positions ("my DCF is right, the market is wrong"). For dual-market investors, additional biases appear: home bias toward BIST due to familiarity, recency bias from Turkey's recent inflation surge, and TRY-denominated anchoring that makes USD returns look smaller than they are.</div>
+            <div class="sec-label">Assessment Finding — 100-Question Test</div>
+            <div class="gap-callout"><strong>Behavioural Finance 7/10</strong> — solid foundation with 3 misses. Likely gaps: pre-mortem technique (imagining failure before committing — not just reviewing past decisions), Thaler's mental accounting beyond surface definition (violating fungibility by treating money differently based on source), and distinguishing the gambler's fallacy from momentum (both involve streaks but for different reasons). These are high-leverage fixes — they affect every trade you make.</div>
+            <div class="sec-label">Why This Matters</div> The ability to build convincing models makes it easier to justify staying in losing positions ("my DCF is right, the market is wrong"). For dual-market investors, additional biases appear: home bias toward BIST due to familiarity, recency bias from Turkey's recent inflation surge, and TRY-denominated anchoring that makes USD returns look smaller than they are.</div>
           </div>
           <div class="content-sec">
             <div class="sec-label">Key Biases &amp; Countermeasures</div>
@@ -803,37 +1025,108 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
     </div>
   </div>
 
-  </div><!-- /modules phase 2 -->
+  </div><!-- /modules phase 3 -->
 </section>
 
 <!-- ════════════════════════════════════
-     PHASE III
+     PHASE IV (was Phase III) — EXCEL & DIFFERENTIATE
 ════════════════════════════════════ -->
 <section class="phase" id="phase3">
   <div class="phase-hdr">
-    <div class="phase-num">III</div>
+    <div class="phase-num">IV</div>
     <div class="phase-info">
-      <span class="phase-tag">Phase Three · Weeks 15–28</span>
+      <span class="phase-tag">Phase Four · Weeks 18–28 · Updated</span>
       <h2>Excel &amp; Differentiate</h2>
-      <p>Apply your MIP/ML/statistics toolkit to quantitative investing, understand derivatives for portfolio hedging, and build genuine BIST-specific research capability that most investors simply cannot replicate.</p>
-      <div class="phase-time">⏱ 14 weeks · ~6–7 hrs/week</div>
+      <p>Apply your MIP/ML/statistics toolkit at full depth. Factor investing, Turkey macro automation, advanced quantitative system building, and BIST deep specialization. Your 10/10 Turkey knowledge and strong macro foundation make Phase IV genuinely differentiated from any generic roadmap.</p>
+      <div class="phase-time">⏱ 11 weeks · ~6–7 hrs/week</div>
     </div>
   </div>
 
   <div class="modules">
 
-  <!-- M7: QUANT -->
+  <!-- NEW: FIXED INCOME & INVESTMENT BASICS GAP REVIEW -->
+  <div class="module p2" id="m-fi">
+    <div class="module-top" onclick="toggleMod('m-fi')">
+      <div class="module-bar"></div>
+      <div class="module-hdr">
+        <span class="module-icon">📑</span>
+        <div class="module-title-g">
+          <div class="module-title">Fixed Income &amp; Investment Basics — Targeted Gap Fill <span class="badge-new">NEW</span></div>
+          <div class="module-sub">Fixed Income 8/10 · Investment Basics 7/10 · Z-spread · Convexity · DDM edge cases · EV/EBITDA logic</div>
+        </div>
+        <div class="module-meta">
+          <span class="module-dur">Wks 14–15 · ~10 hrs</span>
+          <span class="module-badge b-high">Targeted Review</span>
+          <span class="module-chev">▼</span>
+        </div>
+      </div>
+    </div>
+    <div class="module-body">
+      <div class="mod-grid">
+        <div class="mod-left">
+          <div class="content-sec">
+            <div class="sec-label">Assessment Findings</div>
+            <div class="gap-callout"><strong>Fixed Income 8/10</strong> — strong overall, but the 2 misses are in the hardest concepts. Z-spread (the constant bp spread added to the <em>entire zero coupon curve</em> to match market price — not just a YTM spread) and bond convexity (the second-order correction to duration: ΔP ≈ −D×Δy×P + ½×Convexity×(Δy)²×P) are the likely gaps. Callable bond negative convexity also tested.</div>
+            <div class="gap-callout" style="margin-top:8px"><strong>Investment Basics 7/10</strong> — likely gaps in: EV/EBITDA cross-market logic (why it's superior to P/E for inflation-distorted markets), DDM terminal value instability (P = D₁/(r−g) as g → r, price → ∞), and earnings quality signals beyond basic ratio definitions. These are close to strong — this is targeted revision, not rebuilding.</div>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Targeted Gap Topics</div>
+            <table class="curr">
+              <thead><tr><th>Section</th><th>Specific Gap</th><th>Key Insight to Internalise</th></tr></thead>
+              <tbody>
+                <tr><td>Fixed Income</td><td><div class="t-main">Z-spread vs OAS vs YTM spread</div><div class="t-sub">Z-spread = constant bp added to every node of the zero coupon curve. OAS = Z-spread minus the option value embedded in the bond (callable bonds).</div></td><td>Price = Σ CFₜ / (zₜ + Z)ᵗ for all t. Unlike YTM spread (flat curve assumption), Z-spread respects the full term structure.</td></tr>
+                <tr><td>Fixed Income</td><td><div class="t-main">Convexity and callable bond negative convexity</div><div class="t-sub">Positive convexity: bond gains more than it loses for equal yield moves. Callable bond: issuer calls when rates fall (capping price upside) → negative convexity above par.</div></td><td>ΔP/P ≈ −ModDur × Δy + ½ × Convexity × (Δy)². Plot price-yield for straight vs callable bond — see the cap clearly.</td></tr>
+                <tr><td>Inv. Basics</td><td><div class="t-main">Why EV/EBITDA dominates P/E for cross-market comparison</div><div class="t-sub">EV/EBITDA sits above capital structure (debt), tax treatment, and D&amp;A policy — all of which differ enormously between Turkey and US companies.</div></td><td>A Turkish company with high leverage, 22% corporate tax, and IFRS D&amp;A has a distorted P/E that EV/EBITDA corrects for.</td></tr>
+                <tr><td>Inv. Basics</td><td><div class="t-main">DDM Gordon Growth instability &amp; accruals quality</div><div class="t-sub">As g → r, P → ∞. This is why stable-growth DDM only applies to mature, slow-growth firms. Accruals = net income − CFO; large positive accruals signal potential earnings manipulation.</div></td><td>For BIST banks: accruals are critical because loan loss provisions are discretionary — a key earnings quality red flag.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="content-sec">
+            <div class="sec-label">Actions This Week</div>
+            <div class="why-box">Both sections are close to strong — this is a 2-week targeted review, not a module rebuild. Approach: (1) Read the MIT 15.401 Fixed Income session focused specifically on Z-spread and convexity; (2) Work through the Damodaran DDM session on edge cases; (3) Build one Python example for each gap — Z-spread bootstrapping and accruals quality screen for 10 BIST companies using isyatirimhisse data.</div>
+          </div>
+        </div>
+        <div class="mod-right">
+          <div class="sec-label">Resources — All Free</div>
+          <div class="res-grid">
+            <div class="res-card">
+              <span class="res-tag rt-lecture">MIT OCW</span>
+              <div class="res-name"><a href="https://ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008/pages/video-lectures-and-slides/fixed-income-securities/" target="_blank">MIT 15.401 — Fixed Income Securities</a></div>
+              <div class="res-note">Duration, convexity, yield spreads, and callable bond mechanics. Video + slides + problem sets. Specifically covers Z-spread methodology and negative convexity of callable bonds.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-lecture">Video Course</span>
+              <div class="res-name"><a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/webcastvalonline.htm" target="_blank">Damodaran — Session 12 (Dividend Discount Models)</a></div>
+              <div class="res-note">DDM in depth including Gordon Growth edge cases, when the model breaks for high-growth firms, and multi-stage DDM. Directly addresses the Investment Basics gap.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-python">Python</span>
+              <div class="res-name"><a href="https://github.com/urazakgul/isyatirimhisse" target="_blank">isyatirimhisse — BIST financial statements</a></div>
+              <div class="res-note">Fetches income statements and cash flow statements for BIST companies. Use to build an accruals quality screen: rank BIST-100 by (Net Income − CFO) / Total Assets. Low accruals = higher earnings quality.</div>
+            </div>
+            <div class="res-card">
+              <span class="res-tag rt-paper">CFA Reading</span>
+              <div class="res-name"><a href="https://rpc.cfainstitute.org/sites/default/files/-/media/documents/book/rf-publication/2017/rf-v2017-n4-1-pdf.pdf" target="_blank">CFA Research Foundation — Equity Valuation</a></div>
+              <div class="res-note">Free PDF covering DCF, multiples, and cross-market comparison methodology. Reinforces the EV/EBITDA vs P/E logic with institutional practitioner framing.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
   <div class="module p4" id="m7">
     <div class="module-top" onclick="toggleMod('m7')">
       <div class="module-bar"></div>
       <div class="module-hdr">
         <span class="module-icon">⚙️</span>
         <div class="module-title-g">
-          <div class="module-title">Quantitative Investing &amp; Python in Finance</div>
+          <div class="module-title">Quantitative Investing &amp; Python System — Advanced</div>
           <div class="module-sub">Zipline · PyPortfolioOpt · ML for Alpha · Monte Carlo · borsapy + TCMB API</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 15–20 · ~30 hrs</span>
+          <span class="module-dur">Wks 23–26 · ~25 hrs</span>
           <span class="module-badge b-edge">Unique Advantage</span>
           <span class="module-chev">▼</span>
         </div>
@@ -844,7 +1137,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
         <div class="mod-left">
           <div class="content-sec">
             <div class="sec-label">Why This Matters</div>
-            <div class="why-box">This is your asymmetric advantage. Most BIST investors rely on fundamental intuition and broker research. A systematic, code-driven investment process with rigorous backtesting methodology is rare in Turkish markets — and the relative inefficiency of BIST means systematic approaches may find more persistent alpha than in the S&amp;P 500. Your MIP background is particularly valuable for portfolio construction with complex constraints (sector limits, liquidity constraints, turnover bounds).</div>
+            <div class="why-box">This module builds directly on the Phase I Quantitative Finance foundations (FF3F regression, walk-forward backtesting, cointegration). Here the focus shifts from learning to <em>building</em>: a live, automated, weekly-running system that integrates your BIST data pipeline, macro dashboard, and portfolio analytics into a single output. Your MIP background enables complex constraint-based optimisation that goes beyond standard Markowitz.</div>
             <div class="eng-badge"><strong>🔬 Your Toolkit → Finance Problems:</strong> MIP → portfolio optimisation with integer/binary constraints (e.g., minimum lot sizes, include/exclude decisions) · ML classification → regime detection, factor score construction · Statistics → hypothesis testing for factor significance, cross-validation · Monte Carlo → retirement planning, VaR/CVaR estimation</div>
           </div>
           <div class="content-sec">
@@ -852,10 +1145,9 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
             <table class="curr">
               <thead><tr><th>Weeks</th><th>Topic</th><th>Deliverable</th></tr></thead>
               <tbody>
-                <tr><td>Wks 15–16</td><td><div class="t-main">Python Finance Stack Setup</div><div class="t-sub">yfinance + borsapy + TCMB EVDS API pipeline, pandas for time series, matplotlib/plotly visualisation, automated data refresh</div></td><td>Automated daily data pipeline: BIST top 50 OHLCV + TCMB macro series stored locally</td></tr>
-                <tr><td>Wks 17–18</td><td><div class="t-main">Backtesting with Zipline-Reloaded</div><div class="t-sub">Event-driven backtesting, realistic transaction costs, slippage models, out-of-sample splitting, walk-forward analysis, benchmarking vs BIST-100</div></td><td>Backtest your Module 4 factor screener through Zipline with transaction costs. Does the alpha survive realistic costs?</td></tr>
-                <tr><td>Wk 19</td><td><div class="t-main">Monte Carlo for Wealth Planning</div><div class="t-sub">Simulating 1,000+ portfolio paths, TRY inflation scenarios (log-normal vs fat-tail), sequence-of-returns risk, confidence intervals for wealth at retirement age</div></td><td>Retirement simulator: inputs = monthly savings (TRY), BIST/SPX allocation, TRY CPI assumption. Output: wealth distribution at age 55/60/65 in both TRY and USD equivalent</td></tr>
-                <tr><td>Wk 20</td><td><div class="t-main">ML for Regime Detection &amp; Factor Timing</div><div class="t-sub">Random forest / gradient boosting for macro regime classification (using FRED + TCMB features), k-means clustering of market states, validation methodology (time-series CV — no shuffling!)</div></td><td>Train a classifier to label BIST market regimes (bull/bear/consolidation) using macro features. Does regime-conditional factor tilting improve Sharpe?</td></tr>
+                <tr><td>Wks 23–24</td><td><div class="t-main">BIST automated data pipeline &amp; factor screener</div><div class="t-sub">yfinance + borsapy + TCMB EVDS API integration, pandas time series, automated weekly refresh, factor scoring (Value + Quality + Momentum) for BIST-100</div></td><td>Automated weekly data pipeline: BIST top 50 OHLCV + TCMB macro series + factor scores stored locally, updated every Sunday.</td></tr>
+                <tr><td>Wks 24–25</td><td><div class="t-main">Full Zipline backtest with realistic costs</div><div class="t-sub">Event-driven backtesting, transaction costs + slippage models, out-of-sample splitting (walk-forward from Phase I), benchmarking vs BIST-100, performance attribution</div></td><td>Backtest your multi-factor screener (from Module 4) through Zipline with transaction costs. Does alpha survive? Generate a Pyfolio tearsheet.</td></tr>
+                <tr><td>Wk 26</td><td><div class="t-main">ML regime detection &amp; MIP-constrained optimisation</div><div class="t-sub">Gradient boosting for macro regime classification (using TCMB features), regime-conditional factor tilts, portfolio optimisation with MIP constraints (min lot sizes, max sector %, turnover bounds) using CVXPY</div></td><td>Train a regime classifier on TCMB macro data. Build a CVXPY MIP portfolio model with real BIST constraints. Compare to unconstrained Markowitz.</td></tr>
               </tbody>
             </table>
           </div>
@@ -908,12 +1200,12 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
       <div class="module-hdr">
         <span class="module-icon">🎯</span>
         <div class="module-title-g">
-          <div class="module-title">Derivatives: Options, Futures &amp; Portfolio Hedging</div>
-          <div class="module-sub">VIOP USD/TRY Futures · S&amp;P Put Protection · Greeks Without Stochastic Calculus</div>
+          <div class="module-title">Derivatives: Advanced Strategies &amp; BIST Hedging Applications</div>
+          <div class="module-sub">Builds on Phase I Derivatives · Straddles · Protective Put Sizing · VIOP Portfolio Overlay</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 21–24 · ~20 hrs</span>
-          <span class="module-badge b-std">Expand Toolkit</span>
+          <span class="module-dur">Wks 27–28 · ~15 hrs</span>
+          <span class="module-badge b-std">Advanced Application</span>
           <span class="module-chev">▼</span>
         </div>
       </div>
@@ -923,7 +1215,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
         <div class="mod-left">
           <div class="content-sec">
             <div class="sec-label">Why This Matters</div>
-            <div class="why-box">You don't need to be an options trader. You need to understand derivatives to: (1) hedge your S&amp;P 500 holdings during US market downturns using index puts; (2) use VIOP USD/TRY futures to hedge TRY depreciation risk on your BIST holdings; (3) understand the structured products your bank likely sells and whether their embedded options are priced fairly; (4) read VIX and BIST implied volatility as market sentiment signals.</div>
+            <div class="why-box">Phase I built the foundation: payoffs, Greeks, BSM, and basic VIOP mechanics. This module applies those skills to more complex, real-world portfolio scenarios: sizing a protective put programme as a percentage of portfolio value, understanding straddles and collars for event-driven hedging, and constructing a persistent VIOP overlay strategy for your BIST holdings. The deliverable is an executable hedging policy document.</div>
             <div class="turkey-box"><strong>🇹🇷 VIOP — Your TRY Hedge Tool:</strong> Borsa Istanbul's VIOP market offers USD/TRY and EUR/TRY currency futures, BIST-30 index futures, and single-stock futures. These are real hedging tools. If you hold 500K TRY in BIST stocks and are concerned about TRY depreciation, buying USD/TRY futures locks in your exchange rate at a known cost — making the hedge explicit rather than implicit. Understanding futures pricing (cost-of-carry model) lets you evaluate whether the hedge cost is fair.</div>
           </div>
           <div class="content-sec">
@@ -979,7 +1271,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
           <div class="module-sub">Sector Analysis · Inflation Accounting · Corporate Governance Discounts · Foreign Flow Signals</div>
         </div>
         <div class="module-meta">
-          <span class="module-dur">Wks 25–28 · ~20 hrs</span>
+          <span class="module-dur">Wks 26–28 · ~20 hrs</span>
           <span class="module-badge b-edge">Local Edge</span>
           <span class="module-chev">▼</span>
         </div>
@@ -1107,31 +1399,36 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 ════════════════════════════════════ -->
 <section class="final-section" id="checklist">
   <h2>Progress Checklist</h2>
-  <p style="font-size:13.5px;color:var(--text-dim);margin-bottom:18px">Click to mark complete. Saved locally in your browser. Your daily GitHub Issues will reference these milestones.</p>
+  <p style="font-size:13.5px;color:var(--text-dim);margin-bottom:18px">Click to mark complete. Saved in your browser. Updated to reflect the 100-question assessment findings.</p>
 
   <div id="chk-items">
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c1"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 1–2:</strong> Calculate regression beta for 3 BIST stocks + build bottom-up WACC for EREGL or THYAO</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c2"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 3–4:</strong> Full DCF model for a BIST company + cross-market comps table BIST vs S&amp;P 500 sector peers</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c3"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 3–4:</strong> Write a 2-page investment thesis on one BIST holding you own</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c4"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 5–7:</strong> Efficient frontier plot for BIST holdings + rolling BIST/SPX correlation chart</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c5"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 5–7:</strong> Write your Investment Policy Statement with allocation rules and what you will NOT do</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c6"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 8–10:</strong> Factor screener for BIST-100 with Value + Quality + Momentum scores. Read Harvey &amp; Liu's Factor Zoo paper.</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c7"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 11–12:</strong> Turkey Macro Dashboard pulling live TCMB EVDS data running in Python</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c8"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 13–14:</strong> Read CFA Behavioural Finance book + identify 3 biases in your own past trades. Start investment journal.</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c9"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 15–20:</strong> Automated data pipeline + Zipline backtest with transaction costs + retirement Monte Carlo simulator</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c10"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 21–24:</strong> Implement binomial option pricer + model a VIOP TRY hedge for your current BIST exposure</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c11"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 25–28:</strong> Read 5 BIST-specific papers from SSRN + complete Investment Framework capstone document</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c12"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Weekly TCMB bulletin review — policy rate, net reserves, foreign flows</span></div>
-    <div class="check-item" onclick="toggleCheck(this)" data-id="c13"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Weekly portfolio analytics script running and outputting Sharpe / drawdown report</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c-new1"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>★ Wks 1–2 [NEW]:</strong> Draw all 4 option payoff diagrams · verify put-call parity numerically · build Python Greeks calculator</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c-new2"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>★ Wks 3–4 [NEW]:</strong> Implement BSM pricer · plot vol smile · build VIOP TRY hedge calculator for your BIST holdings</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c-new3"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>★ Wks 5–6 [NEW]:</strong> Run FF3F regression on BIST portfolio returns · backtest momentum strategy with walk-forward splits</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c-new4"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>★ Wks 7–8 [NEW]:</strong> Test BIST/SPX cointegration · build Monte Carlo retirement simulator in TRY + USD</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c1"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 9–10:</strong> OLS beta regression for 3 BIST stocks + bottom-up WACC for EREGL or THYAO</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c2"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 9–10:</strong> Full DCF model for a BIST company + cross-market comps table BIST vs S&amp;P 500</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c3"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 9–10:</strong> Write 2-page investment thesis on one BIST holding you own with IAS 29 accounting note</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c4"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 11–13:</strong> Efficient frontier with Ledoit-Wolf shrinkage · VaR/CVaR calculation · rolling BIST/SPX correlation chart</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c5"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 11–13:</strong> Write Investment Policy Statement with allocation bands, rebalancing rules, and what you will NOT do</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c-new5"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>★ Wks 14–15 [NEW]:</strong> Z-spread bootstrapping in Python · bond convexity examples · accruals quality screen for 10 BIST companies</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c8"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 16–17:</strong> Read CFA Behavioural Finance book + audit last 10 trades for biases + start investment journal</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c6"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 18–20:</strong> Factor screener for BIST-100 with Value + Quality + Momentum. Read AQR "Fact, Fiction and Factor Investing" + Harvey &amp; Liu's Factor Zoo paper.</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c7"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 21–22:</strong> Turkey Macro Dashboard pulling live TCMB EVDS data + DXY vs BIST correlation chart</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c9"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 23–26:</strong> Automated BIST pipeline + Zipline backtest with walk-forward + MIP-constrained CVXPY portfolio optimiser</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c10"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 27–28:</strong> Advanced VIOP overlay strategy document + straddle/collar analysis for event-driven hedging</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c11"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Wks 26–28:</strong> Read 5 BIST-specific SSRN papers + complete Investment Framework capstone document</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c12"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Weekly TCMB bulletin — policy rate, swap-adjusted net reserves, foreign equity flows</span></div>
+    <div class="check-item" onclick="toggleCheck(this)" data-id="c13"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Weekly portfolio analytics script — Sharpe, drawdown, factor exposure report</span></div>
     <div class="check-item" onclick="toggleCheck(this)" data-id="c14"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Investment journal — write thesis before every trade, review quarterly</span></div>
   </div>
 
   <div style="margin-top:36px;padding:16px;background:var(--bg2);border:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);line-height:1.9;">
-    PROFILE · BSc Industrial Engineering · MSc Operations Research · 4 Yrs Banking (TR) · BIST + S&amp;P 500 Investor<br>
-    SCORE · 94% (17/18) · Gap Identified: Beta / CAPM Calculation &amp; Bottom-Up Beta for EM Stocks<br>
-    SKILLS · MIP · Machine Learning · Data Science · Statistics — All Applied Throughout This Roadmap<br>
-    RESOURCES · 100% Free &amp; Online · No Paywalls · No Hard-Copy Required<br>
-    TIMELINE · 28 Weeks at 5–7 hrs/week · Capstone: Personal Quantitative Investment Framework
+    ASSESSMENT · 100-Question Test · Score: 71% (71/100) · Advanced Level<br>
+    CRITICAL GAPS · Derivatives 4/10 · Quantitative Finance 5/10 — addressed in Phase I (2 new modules)<br>
+    DEVELOPING · Equity Analysis 6/10 · Investment Basics 7/10 · Portfolio Theory 7/10 · Behavioural Finance 7/10<br>
+    CONFIRMED STRENGTHS · Personal Finance 9/10 · Turkey &amp; EM Markets 10/10<br>
+    MODULES · 11 total (9 original + 2 new) · RESOURCES · 100% Free &amp; Online · TIMELINE · 28 Weeks
   </div>
 </section>
 
@@ -1144,13 +1441,13 @@ function toggleMod(id) {
   const el = document.getElementById(id);
   el.classList.toggle('open');
   if (el.classList.contains('open')) opened.add(id); else opened.delete(id);
-  document.getElementById('prog-fill').style.width = (opened.size / 9 * 100) + '%';
-  document.getElementById('prog-text').textContent = `${opened.size} / 9 modules`;
+  document.getElementById('prog-fill').style.width = (opened.size / 11 * 100) + '%';
+  document.getElementById('prog-text').textContent = `${opened.size} / 11 modules`;
 }
 
 // ── NAV SCROLL SPY ──
 const navLinks = document.querySelectorAll('.nav-link[data-s]');
-const anchors = ['overview','m1','m2','m3','m4','m5','m6','m7','m8','m9','deploy','checklist'];
+const anchors = ['overview','m-deriv','m-quant','m1','m2','m3','m-fi','m6','m4','m5','m7','m8','m9','deploy','checklist'];
 window.addEventListener('scroll', () => {
   let cur = anchors[0];
   anchors.forEach(id => {
@@ -1179,7 +1476,7 @@ function toggleCheck(el) {
 })();
 
 // ── OPEN FIRST MODULE ──
-window.addEventListener('load', () => toggleMod('m1'));
+window.addEventListener('load', () => toggleMod('m-deriv'));
 </script>
 </body>
 </html>
