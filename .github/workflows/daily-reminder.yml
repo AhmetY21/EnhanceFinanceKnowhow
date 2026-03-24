@@ -1,0 +1,241 @@
+name: Daily Finance Study Reminder
+
+on:
+  schedule:
+    # 07:00 UTC = 10:00 Ankara time (UTC+3)
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      day_override:
+        description: 'Override study day number (e.g. 5)'
+        required: false
+        default: ''
+
+jobs:
+  open-daily-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compute study day and module
+        id: study
+        run: |
+          python3 - <<'PYEOF'
+          import datetime, os, json, pathlib
+
+          progress_file = pathlib.Path("progress.json")
+          if progress_file.exists():
+              data = json.loads(progress_file.read_text())
+          else:
+              data = {"start_date": datetime.date.today().isoformat(), "completed_days": []}
+
+          start = datetime.date.fromisoformat(data["start_date"])
+          today = datetime.date.today()
+          study_day = (today - start).days + 1
+
+          override = os.environ.get("DAY_OVERRIDE", "").strip()
+          if override.isdigit():
+              study_day = int(override)
+
+          MODULES = [
+              {
+                "week_range": (1, 4),
+                "name": "Derivatives — Options, Futures and VIOP Hedging",
+                "tasks": [
+                  "Watch MIT 15.401 Options lectures (ocw.mit.edu/courses/15-401-finance-theory-i-fall-2008)",
+                  "Draw all 4 basic option payoff diagrams: long call, long put, short call, short put",
+                  "Verify put-call parity numerically with a live SPX option chain",
+                  "Build a Python Greeks calculator using the BSM formula",
+                  "Watch Patrick Boyle derivatives videos on YouTube"
+                ]
+              },
+              {
+                "week_range": (5, 8),
+                "name": "Quantitative Finance — FF3F, Backtesting and Cointegration",
+                "tasks": [
+                  "Run a Fama-French 3-factor regression on your BIST portfolio returns",
+                  "Download AQR factor datasets: aqr.com/Insights/Datasets",
+                  "Backtest a BIST momentum strategy using walk-forward splits (vectorbt)",
+                  "Test cointegration between BIST-100 and SPX using Engle-Granger",
+                  "Read Harvey and Liu Factor Zoo paper (SSRN abstract 3341728)"
+                ]
+              },
+              {
+                "week_range": (9, 10),
+                "name": "Beta, CAPM and Equity Valuation",
+                "tasks": [
+                  "Watch Damodaran Valuation Online Sessions 2-6 (pages.stern.nyu.edu/~adamodar)",
+                  "Run OLS beta regression for 3 BIST stocks using yfinance (.IS suffix)",
+                  "Build bottom-up WACC for EREGL or THYAO using Damodaran Turkey CRP data",
+                  "Build a full DCF model for a BIST-100 company using KAP financial statements",
+                  "Download Damodaran country risk premium spreadsheet (January 2026 data)"
+                ]
+              },
+              {
+                "week_range": (11, 13),
+                "name": "Portfolio Construction and Risk Management",
+                "tasks": [
+                  "Watch MIT 15.401 Portfolio Theory sessions",
+                  "Install PyPortfolioOpt: pip install PyPortfolioOpt",
+                  "Plot efficient frontier for your top 10 BIST holdings using Ledoit-Wolf covariance",
+                  "Calculate 1-day 95% VaR and CVaR for your portfolio using historical simulation",
+                  "Write your Investment Policy Statement with allocation bands and rebalancing rules"
+                ]
+              },
+              {
+                "week_range": (14, 15),
+                "name": "Fixed Income and Investment Basics Gap Fill",
+                "tasks": [
+                  "Watch MIT 15.401 Fixed Income sessions — focus on Z-spread and convexity",
+                  "Watch Damodaran Session 12 on Dividend Discount Models and DDM edge cases",
+                  "Build a Z-spread bootstrapping example in Python",
+                  "Build an accruals quality screen for 10 BIST companies using isyatirimhisse",
+                  "Build a cross-market comps table: 5 BIST vs 5 SPX stocks using EV/EBITDA"
+                ]
+              },
+              {
+                "week_range": (16, 17),
+                "name": "Behavioural Finance and Decision Architecture",
+                "tasks": [
+                  "Read CFA Behavioural Finance: The Second Generation chapters 1-5 (free PDF)",
+                  "Watch Shiller Yale Financial Markets lectures 7-8 on behavioural finance",
+                  "Review your last 10 BIST trades and identify which biases were active",
+                  "Write down a pre-mortem for each current open position",
+                  "Finalise your Investment Policy Statement and print it"
+                ]
+              },
+              {
+                "week_range": (18, 20),
+                "name": "Factor Investing and Empirical Asset Pricing",
+                "tasks": [
+                  "Read AQR Fact Fiction and Factor Investing (free PDF on aqr.com)",
+                  "Build a BIST-100 multi-factor screener: Value + Quality + Momentum using borsapy",
+                  "Run Fama-French 5-factor regression and compare to 3-factor results",
+                  "Read Foye FF 5-Factor Model in Emerging Markets paper (SSRN 3051198)",
+                  "Backtest the factor screener with proper out-of-sample validation"
+                ]
+              },
+              {
+                "week_range": (21, 22),
+                "name": "Advanced Macroeconomics and Turkey Framework",
+                "tasks": [
+                  "Register for TCMB EVDS API at evds2.tcmb.gov.tr",
+                  "Build Turkey Macro Dashboard: net reserves, CPI spread, foreign equity flows",
+                  "Chart DXY index vs BIST-100 USD-adjusted monthly returns 2013-2025",
+                  "Read the latest IMF Article IV on Turkey (imf.org/en/Countries/TUR)",
+                  "Read TCMB working papers on FX pass-through and inflation dynamics"
+                ]
+              },
+              {
+                "week_range": (23, 26),
+                "name": "Quantitative System — BIST Pipeline and Live Analytics",
+                "tasks": [
+                  "Build automated weekly data pipeline: borsapy + TCMB EVDS + yfinance",
+                  "Backtest factor screener through Zipline-Reloaded with realistic transaction costs",
+                  "Build MIP-constrained portfolio optimiser using CVXPY",
+                  "Train a macro regime classifier using TCMB features (gradient boosting)",
+                  "Build Monte Carlo retirement simulator: TRY + USD projections at age 55/60/65"
+                ]
+              },
+              {
+                "week_range": (27, 28),
+                "name": "Derivatives Advanced and BIST Deep Specialization",
+                "tasks": [
+                  "Design a persistent VIOP USD/TRY futures overlay strategy for your BIST holdings",
+                  "Size a 3-month SPX protective put programme as percentage of portfolio",
+                  "Search SSRN for Borsa Istanbul and read 3 factor anomaly papers",
+                  "Analyse BIST banking sector: NIM, NPL, capital adequacy for GARAN and AKBNK",
+                  "Write your complete Investment Framework Capstone document"
+                ]
+              },
+          ]
+
+          week_num = (study_day - 1) // 7 + 1
+          module = None
+          for m in MODULES:
+              w_start, w_end = m["week_range"]
+              if w_start <= week_num <= w_end:
+                  module = m
+                  break
+          if module is None:
+              module = MODULES[-1]
+
+          tasks_md = "\n".join(f"- [ ] {t}" for t in module["tasks"])
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"study_day={study_day}\n")
+              f.write(f"week_num={week_num}\n")
+              f.write(f"module_name={module['name']}\n")
+              f.write(f"tasks_md<<ENDTASKS\n{tasks_md}\nENDTASKS\n")
+              f.write(f"today={today.isoformat()}\n")
+          PYEOF
+        env:
+          DAY_OVERRIDE: ${{ github.event.inputs.day_override }}
+
+      - name: Create study-reminder label if missing
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo:  context.repo.repo,
+                name:  'study-reminder',
+                color: 'B8620A',
+                description: 'Daily finance study session reminder'
+              });
+            } catch (e) {
+              if (e.status !== 422) throw e;
+            }
+
+      - name: Open daily study issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const day    = `${{ steps.study.outputs.study_day }}`;
+            const week   = `${{ steps.study.outputs.week_num }}`;
+            const module = `${{ steps.study.outputs.module_name }}`;
+            const tasks  = `${{ steps.study.outputs.tasks_md }}`;
+            const today  = `${{ steps.study.outputs.today }}`;
+            const siteUrl = `https://AhmetY21.github.io/finance-roadmap`;
+
+            const body = [
+              `## Financial Mastery Roadmap — Day ${day}`,
+              ``,
+              `**Date:** ${today}`,
+              `**Study Week:** ${week} of 28`,
+              `**Current Module:** ${module}`,
+              ``,
+              `---`,
+              ``,
+              `### Today's Tasks`,
+              ``,
+              tasks,
+              ``,
+              `---`,
+              ``,
+              `### Quick Links`,
+              `- [Open Roadmap](${siteUrl})`,
+              `- [Damodaran Data Hub](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datacurrent.html)`,
+              `- [TCMB EVDS Data](https://evds2.tcmb.gov.tr/index.php?/evds/index/en)`,
+              `- [KAP Disclosures](https://kap.org.tr)`,
+              `- [AQR Factor Data](https://www.aqr.com/Insights/Datasets)`,
+              `- [BIST Data Table](https://www.isyatirim.com.tr/en-us/analysis/stocks/Pages/bist-data-table.aspx)`,
+              ``,
+              `---`,
+              ``,
+              `> Close this issue when you complete today's session. Closed issues form your study log.`,
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              title: `Study Session — Week ${week}, Day ${day} (${today}) — ${module}`,
+              body:  body,
+              labels: ['study-reminder'],
+            });
