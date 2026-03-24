@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Mastery Roadmap — Updated from 100-Question Assessment</title>
+<title>Financial Mastery Roadmap</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -304,7 +304,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 
   <div class="nav-group">
     <div class="nav-group-label">Setup</div>
-    <a href="#deploy" class="nav-link" data-s="deploy"><span class="nav-dot"></span>GitHub Deployment</a>
     <a href="#checklist" class="nav-link" data-s="checklist"><span class="nav-dot"></span>Progress Checklist</a>
   </div>
 
@@ -322,28 +321,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 <section class="hero" id="overview">
   <div class="hero-eyebrow">Updated from 100-Question Assessment · Advanced Level</div>
   <h1>Know the Gaps.<br>Build the <em>System.</em></h1>
-  <p>This roadmap has been updated from a 100-question assessment across 10 sections. The score of 71% (71/100) reveals a more detailed picture than the earlier 18-question test — two critical gaps in Derivatives and Quantitative Finance, plus targeted weaknesses in Equity Analysis and Portfolio Theory. The original 9 modules are preserved and enhanced; 2 new modules address the critical gaps directly. Every resource remains free and online.</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><span class="val">71%</span><span class="lbl">100-Q Score</span></div>
-    <div class="hero-stat"><span class="val">2</span><span class="lbl">Critical Gaps</span></div>
-    <div class="hero-stat"><span class="val">28</span><span class="lbl">Weeks Total</span></div>
-    <div class="hero-stat"><span class="val">11</span><span class="lbl">Core Modules</span></div>
-  </div>
-  <div class="score-row">
-    <span class="score-pill weak">Derivatives 4/10</span>
-    <span class="score-pill weak">Quantitative Finance 5/10</span>
-    <span class="score-pill ok">Equity Analysis 6/10</span>
-    <span class="score-pill ok">Investment Basics 7/10</span>
-    <span class="score-pill ok">Portfolio Theory 7/10</span>
-    <span class="score-pill ok">Behavioural Finance 7/10</span>
-    <span class="score-pill good">Macroeconomics 8/10</span>
-    <span class="score-pill good">Fixed Income 8/10</span>
-    <span class="score-pill good">Personal Finance 9/10</span>
-    <span class="score-pill good">Turkey &amp; EM 10/10</span>
-  </div>
-  <div class="alert-banner">
-    <strong>What changed from the 18-question test:</strong> The 94% on 18 questions masked two significant blind spots — Derivatives (4/10) and Quantitative Finance (5/10) — that only became visible at scale. These are now Phase I priorities. Your Turkey &amp; EM knowledge (10/10) and Personal Finance (9/10) are confirmed strengths. The roadmap structure is preserved but phase ordering is updated to address the real gaps first.
-  </div>
 </section>
 
 <!-- ── TIMELINE ── -->
@@ -364,15 +341,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
      PHASE I — NEW: CRITICAL GAPS
 ════════════════════════════════════ -->
 <section class="phase" id="phase0">
-  <div class="phase-hdr">
-    <div class="phase-num">I</div>
-    <div class="phase-info">
-      <span class="phase-tag">Phase One · Weeks 1–8 · NEW from 100-Question Assessment</span>
-      <h2>Close the Critical Gaps</h2>
-      <p>The 100-question assessment revealed two foundational gaps invisible in the 18-question test: Derivatives (4/10) and Quantitative Finance (5/10). These move to the front because they underpin everything else — you cannot hedge a portfolio you don't understand, and your ML/stats toolkit is wasted without the finance-specific translation layer. Both modules are entirely new additions to this roadmap.</p>
-      <div class="phase-time">⏱ 8 weeks · ~5 hrs/week</div>
-    </div>
-  </div>
 
   <div class="modules">
 
@@ -1338,61 +1306,7 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
 </section>
 
 <!-- ════════════════════════════════════
-     GITHUB DEPLOYMENT
-════════════════════════════════════ -->
-<section class="deploy-section" id="deploy">
-  <h2>🚀 GitHub Deployment Guide</h2>
-  <p>Deploy this roadmap as a GitHub Pages site at <code>AhmetY21.github.io/finance-roadmap</code>, with a GitHub Actions workflow that automatically opens a GitHub Issue each morning as your daily study reminder — with today's module, tasks, and a link back to the site.</p>
 
-  <div class="step-list">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <div class="step-title">Create the repository</div>
-        <div class="step-desc">Go to <a href="https://github.com/new" target="_blank">github.com/new</a>. Name it <code>finance-roadmap</code>. Set to <strong>Public</strong> (required for free GitHub Pages). Do NOT initialise with README — you'll push the files directly.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <div class="step-title">Upload files from the zip</div>
-        <div class="step-desc">Download <code>finance-roadmap-deploy.zip</code> from this session. Unzip it. Then:<br>
-        <code>cd finance-roadmap</code><br>
-        <code>git init && git add . && git commit -m "Initial deploy"</code><br>
-        <code>git remote add origin https://github.com/AhmetY21/finance-roadmap.git</code><br>
-        <code>git push -u origin main</code></div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <div class="step-title">Enable GitHub Pages</div>
-        <div class="step-desc">Go to repository → <strong>Settings → Pages</strong>. Under "Source", select <strong>Deploy from a branch</strong>, branch: <code>main</code>, folder: <code>/ (root)</code>. Click Save. Your site will be live at <code>https://AhmetY21.github.io/finance-roadmap</code> within 2–3 minutes.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <div class="step-title">Enable daily Issues reminder (GitHub Actions)</div>
-        <div class="step-desc">The file <code>.github/workflows/daily-reminder.yml</code> is already included in the zip. It runs every morning at <strong>07:00 UTC (10:00 Ankara time)</strong> and opens a GitHub Issue titled "📚 Today's Finance Study Session — [date]" with your current module tasks. No secrets needed — it uses <code>GITHUB_TOKEN</code> which is automatically available. The Issues tab becomes your study log.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">5</div>
-      <div class="step-body">
-        <div class="step-title">Enable Issues on the repository</div>
-        <div class="step-desc">Go to Settings → Features → tick ✅ <strong>Issues</strong>. This is where your daily reminders will appear. You can close each Issue when you complete the day's session — this creates a visible study log you can review weekly.</div>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">6</div>
-      <div class="step-body">
-        <div class="step-title">(Optional) Get email notifications</div>
-        <div class="step-desc">GitHub automatically emails you when an Issue is opened in your own repo. Go to <strong>github.com/settings/notifications</strong> → ensure "Participating and @mentions" and "Issues" are ticked under Email. Every morning you'll receive an email with that day's study tasks — zero extra setup required.</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ════════════════════════════════════
      CHECKLIST
@@ -1423,13 +1337,6 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-
     <div class="check-item" onclick="toggleCheck(this)" data-id="c14"><div class="chk-box"><div class="chk-inner"></div></div><span class="chk-text"><strong>Ongoing:</strong> Investment journal — write thesis before every trade, review quarterly</span></div>
   </div>
 
-  <div style="margin-top:36px;padding:16px;background:var(--bg2);border:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-muted);line-height:1.9;">
-    ASSESSMENT · 100-Question Test · Score: 71% (71/100) · Advanced Level<br>
-    CRITICAL GAPS · Derivatives 4/10 · Quantitative Finance 5/10 — addressed in Phase I (2 new modules)<br>
-    DEVELOPING · Equity Analysis 6/10 · Investment Basics 7/10 · Portfolio Theory 7/10 · Behavioural Finance 7/10<br>
-    CONFIRMED STRENGTHS · Personal Finance 9/10 · Turkey &amp; EM Markets 10/10<br>
-    MODULES · 11 total (9 original + 2 new) · RESOURCES · 100% Free &amp; Online · TIMELINE · 28 Weeks
-  </div>
 </section>
 
 </main>
